@@ -1,0 +1,101 @@
+{
+  "@context": {
+    "@vocab": "https://withvector.com/schema#",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "withvector": "https://withvector.com/schema#",
+    "PostResponse": "withvector:PostResponse",
+    "message": {
+      "@id": "withvector:message",
+      "@type": "xsd:string"
+    },
+    "ingestionConfigId": {
+      "@id": "withvector:ingestionConfigId",
+      "@type": "xsd:string"
+    },
+    "Post10EntitiesActionsIngestionBolIngestRequest": "withvector:Post10EntitiesActionsIngestionBolIngestRequest",
+    "metadata": {
+      "@id": "withvector:metadata",
+      "@type": "xsd:string"
+    },
+    "file": {
+      "@id": "withvector:file",
+      "@type": "xsd:string"
+    },
+    "Post10EntitiesActionsIngestionBolIngestResponse": "withvector:Post10EntitiesActionsIngestionBolIngestResponse",
+    "Post10EntitiesQueryRequest": "withvector:Post10EntitiesQueryRequest",
+    "filters": {
+      "@id": "withvector:filters",
+      "@container": "@list"
+    },
+    "orders": {
+      "@id": "withvector:orders",
+      "@container": "@list"
+    },
+    "Post10EntitiesQueryResponse": "withvector:Post10EntitiesQueryResponse",
+    "children": {
+      "@id": "withvector:children",
+      "@container": "@list"
+    },
+    "count": {
+      "@id": "withvector:count",
+      "@type": "xsd:integer"
+    },
+    "Post10EntitiesRecordsRequest": "withvector:Post10EntitiesRecordsRequest",
+    "Get10EntitiesRecordsUniqueidResponse": "withvector:Get10EntitiesRecordsUniqueidResponse",
+    "uniqueId": {
+      "@id": "withvector:uniqueId",
+      "@type": "xsd:string"
+    },
+    "mixins": {
+      "@id": "withvector:mixins"
+    },
+    "owner": {
+      "@id": "withvector:owner"
+    },
+    "status.state": {
+      "@id": "withvector:status.state",
+      "@type": "xsd:string"
+    },
+    "createdBy": {
+      "@id": "withvector:createdBy"
+    },
+    "creationDate": {
+      "@id": "withvector:creationDate",
+      "@type": "xsd:string"
+    },
+    "modifiedBy": {
+      "@id": "withvector:modifiedBy"
+    },
+    "modifiedDate": {
+      "@id": "withvector:modifiedDate",
+      "@type": "xsd:string"
+    },
+    "document.name": {
+      "@id": "withvector:document.name",
+      "@type": "xsd:string"
+    },
+    "document.address": {
+      "@id": "withvector:document.address"
+    },
+    "document.processed": {
+      "@id": "withvector:document.processed",
+      "@type": "xsd:boolean"
+    },
+    "document.uploadDate": {
+      "@id": "withvector:document.uploadDate",
+      "@type": "xsd:string"
+    },
+    "document.attachments": {
+      "@id": "withvector:document.attachments"
+    }
+  },
+  "@type": "schema:Dataset",
+  "schema:name": "Vector API JSON-LD context",
+  "schema:description": "A JSON-LD @context for the objects Vector's own API contract declares: one class per component schema, one property per declared field, typed from the contract. Derived by script (derive-json-ld.py, 2026-10-21) from openapi/_ae-authored/withvector-com-openapi-generated.yml.",
+  "dcterms:created": "2026-10-21",
+  "dcterms:source": [
+    "openapi/_ae-authored/withvector-com-openapi-generated.yml"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/withvector-com/main/json-schema/withvector-com-post10-entities-actions-ingestion-bol-ingest-request-schema.json",
+  "title": "Post10EntitiesActionsIngestionBolIngestRequest",
+  "x-generated": "2026-10-21",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/withvector-com-openapi-generated.yml#/components/schemas/Post10EntitiesActionsIngestionBolIngestRequest",
+  "type": "object",
+  "properties": {
+    "metadata": {
+      "type": "string",
+      "description": "Shipment metadata envelope containing shipmentMetadata array."
+    },
+    "file": {
+      "type": "string",
+      "description": "One or more PDF document files."
+    }
+  },
+  "required": [
+    "metadata",
+    "file"
+  ]
+}

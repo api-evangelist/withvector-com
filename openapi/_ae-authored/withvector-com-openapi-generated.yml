@@ -1,0 +1,264 @@
+openapi: 3.1.0
+info:
+  title: Vector API
+  version: '2026-10-21'
+  description: 'GENERATED FROM DOCUMENTATION by API Evangelist on 2026-10-21: 5 operation(s) read from 2 public documentation page(s) (each operation
+    names its page in x-source). This is not the provider''s published contract; Vector has published no machine-readable contract that the pipeline
+    could find. Engine: local.'
+  x-evidence-tiers:
+    code-example: 2
+    documentation: 3
+    pages-with-code: 2
+    pages-read: 2
+  x-generated-from: documentation
+  x-provenance: generated
+  x-authored-by: API Evangelist
+  x-generated: '2026-10-21'
+  x-generator: generate-contract-from-docs.py
+  x-engine: local
+  x-sources:
+  - https://www.withvector.com/integration-docs/fetching-bols
+  - https://www.withvector.com/integration-docs/bol-file-upload/api-ingestion
+servers:
+- url: https://api.withvector.com
+paths:
+  /:
+    post:
+      operationId: post
+      tags:
+      - Api
+      summary: POST /
+      x-source: https://www.withvector.com/integration-docs/bol-file-upload/api-ingestion
+      responses:
+        '201':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl -X POST  \"https://<your-vector-host>/1.0/entities/actions/ingestion/bol/ingest?ingestion_config_id=$CONFIG\"  -H \"Authorization:\
+          \ Bearer $TOKEN\"  -F \"metadata=@metadata.json;type=application/json\"  -F \"file=@mybol.pdf\" 202 Accepted Queued, not yet filed Response\
+          \ Copy {\n \"message\": \"BOL queued for ingestion\",\n \"ingestionConfigId\": \"a1b2c3d4-...\"\n} The 202 body is an acknowledgement,\
+          \ not the crea"
+  /1.0/entities/actions/ingestion/bol/ingest:
+    post:
+      operationId: post_1_0_entities_actions_ingestion_bol_ingest
+      tags:
+      - '1'
+      summary: Submit a bill of lading — the document plus its key fields — and Vector files it against the right shipment.
+      x-source: https://www.withvector.com/integration-docs/bol-file-upload/api-ingestion
+      parameters:
+      - name: ingestion_config_id
+        in: query
+        required: true
+        schema:
+          type: string
+        description: The ingestion config UUID provided during onboarding.
+      - name: Authorization
+        in: header
+        required: true
+        schema:
+          type: string
+        description: Bearer token.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Post10EntitiesActionsIngestionBolIngestRequest'
+      responses:
+        '202':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Post10EntitiesActionsIngestionBolIngestResponse'
+      x-evidence:
+        kind: documentation
+  /1.0/entities/query:
+    post:
+      operationId: post_1_0_entities_query
+      tags:
+      - '1'
+      summary: Document Search
+      x-source: https://www.withvector.com/integration-docs/fetching-bols
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Post10EntitiesQueryRequest'
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Post10EntitiesQueryResponse'
+      x-evidence:
+        kind: documentation
+  /1.0/entities/records:
+    post:
+      operationId: post_1_0_entities_records
+      tags:
+      - '1'
+      summary: 'The general‑purpose entity API expects a fully built entity graph: platform mixin UUIDs, file IDs that match part names, and every
+        relationship already resolved to an internal entity ID.'
+      x-source: https://www.withvector.com/integration-docs/bol-file-upload/api-ingestion
+      parameters:
+      - name: Authorization
+        in: header
+        required: true
+        schema:
+          type: string
+        description: Bearer token.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Post10EntitiesRecordsRequest'
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /1.0/entities/records/{uniqueid}:
+    get:
+      operationId: get_1_0_entities_records_uniqueid
+      tags:
+      - '1'
+      summary: Get Single Document
+      x-source: https://www.withvector.com/integration-docs/fetching-bols
+      parameters:
+      - name: uniqueid
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Get10EntitiesRecordsUniqueidResponse'
+      x-evidence:
+        kind: documentation
+components:
+  schemas:
+    PostResponse:
+      type: object
+      properties:
+        message:
+          type: string
+        ingestionConfigId:
+          type: string
+    Post10EntitiesActionsIngestionBolIngestRequest:
+      type: object
+      properties:
+        metadata:
+          type: string
+          description: Shipment metadata envelope containing shipmentMetadata array.
+        file:
+          type: string
+          description: One or more PDF document files.
+      required:
+      - metadata
+      - file
+    Post10EntitiesActionsIngestionBolIngestResponse:
+      type: object
+      properties:
+        message:
+          type: string
+          description: Acknowledgement message.
+        ingestionConfigId:
+          type: string
+          description: The ingestion config ID used.
+    Post10EntitiesQueryRequest:
+      type: object
+      properties:
+        filters:
+          type: array
+          description: Array of filter objects that narrow down which documents are returned.
+        orders:
+          type: array
+          description: Array controlling the sort order of the response.
+        metadata:
+          type: object
+          description: Controls pagination and result grouping (size, offset, maxSizePerGroup, shouldIncludeLeafEntities).
+    Post10EntitiesQueryResponse:
+      type: object
+      properties:
+        children:
+          type: array
+          description: Array where each item contains a data object – a fully hydrated entity in the same shape as the Get Single Document response.
+        count:
+          type: integer
+          description: Total number of matched documents.
+    Post10EntitiesRecordsRequest:
+      type: object
+      properties:
+        entity graph:
+          type: string
+          description: Fully built entity graph with platform mixin UUIDs, file IDs, and resolved relationships.
+      required:
+      - entity graph
+    Get10EntitiesRecordsUniqueidResponse:
+      type: object
+      properties:
+        uniqueId:
+          type: string
+          description: UUID of the document in Vector.
+        mixins:
+          type: object
+          description: Active and inactive schema mixins (Entity, Document, Bill of Lading, etc.).
+        owner:
+          type: object
+          description: Owner information including user and firm details.
+        status.state:
+          type: string
+          description: 'Processing state: "idle" (ready) or "busy" (operations cannot be performed).'
+        createdBy:
+          type: object
+          description: User who created the document (entityId and displayName).
+        creationDate:
+          type: string
+          description: ISO 8601 timestamp when the document was created.
+        modifiedBy:
+          type: object
+          description: User who last modified the document.
+        modifiedDate:
+          type: string
+          description: ISO 8601 timestamp when the document was last modified.
+        document.name:
+          type: string
+          description: Document name/identifier.
+        document.address:
+          type: object
+          description: Resolved address with region, locality, postalCode, streetAddress, geolocation.
+        document.processed:
+          type: boolean
+          description: Whether the document has been processed.
+        document.uploadDate:
+          type: string
+          description: ISO 8601 timestamp when the document was uploaded.
+        document.attachments:
+          type: object
+          description: Files array and aggregate PDF with download URIs.
+        core_documents_shipment.*:
+          type: object
+          description: All fields specific to the core_documents_shipment entity (e.g., identification, carrier, weight, etc.) as shown in the
+            example response.
+  securitySchemes:
+    bearer:
+      type: http
+      scheme: bearer
+security:
+- bearer: []
+tags:
+- name: '1'
+- name: Api

@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/withvector-com/main/json-schema/withvector-com-post10-entities-query-request-schema.json",
+  "title": "Post10EntitiesQueryRequest",
+  "x-generated": "2026-10-21",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/withvector-com-openapi-generated.yml#/components/schemas/Post10EntitiesQueryRequest",
+  "type": "object",
+  "properties": {
+    "filters": {
+      "type": "array",
+      "description": "Array of filter objects that narrow down which documents are returned."
+    },
+    "orders": {
+      "type": "array",
+      "description": "Array controlling the sort order of the response."
+    },
+    "metadata": {
+      "type": "object",
+      "description": "Controls pagination and result grouping (size, offset, maxSizePerGroup, shouldIncludeLeafEntities)."
+    }
+  }
+}

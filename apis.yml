@@ -1,25 +1,103 @@
 aid: withvector-com
+
 name: Vector
-description: 'Vector is a company surfaced via the API Evangelist harvest backlog (source: vc-portfolio;
-  backed by 8vc) and added to the network as a stub for full-pipeline profiling.'
+
+image: https://www.withvector.com/wp-content/uploads/2025/10/og-homepage.jpg
+
+description: Vector is a venture‑backed technology company focused on building data‑driven platforms for enterprises. Backed by 8vc, Vector aims
+  to simplify complex workflows with scalable APIs and developer tools, serving a growing customer base across multiple industries.
+
 url: https://raw.githubusercontent.com/api-evangelist/withvector-com/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:vc-portfolio
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-10-21 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-10-21'
+
 modified: '2026-10-21'
+
 tags:
 - Company
-apis: []
+- Data
+- APIs
+- Platform
+- Enterprise
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
-x-backed-by:
-- 8vc
+
 common:
+- type: Spectral
+  url: rules/withvector-com-rules.yml
+- type: JSONLD
+  url: json-ld/withvector-com-context.jsonld
+- type: Vocabulary
+  url: vocabulary/withvector-com-vocabulary.yml
+- type: DataModel
+  url: data-model/withvector-com-data-model.yml
+- type: Conformance
+  url: conformance/withvector-com-conformance.yml
+- type: LLMsTxt
+  url: llms/withvector-com-llms.txt
+- type: WellKnown
+  url: well-known/withvector-com-well-known.yml
+- type: Hosts
+  url: hosts/withvector-com-hosts.yml
+- type: Vendors
+  url: vendors/withvector-com-vendors.yml
+- type: TermsOfService
+  url: https://www.withvector.com/terms-service/
+- type: Support
+  url: https://support.withvector.com/hc/en-us
+- type: PrivacyPolicy
+  url: https://www.withvector.com/privacy-policy/
+- type: Newsroom
+  url: https://www.withvector.com/press/
+- type: Blog
+  url: https://www.withvector.com/blog/
+- type: DomainSecurity
+  url: security/withvector-com-domain-security.yml
 - type: Website
   url: https://withvector.com
+
+apis:
+- aid: withvector-com:withvector-com-api
+  name: Vector API
+  description: 'Vector API as documented publicly: 5 operations. Contract generated from the documentation by API Evangelist (2026-10-21); not
+    the provider''s own document.'
+  humanURL: https://www.withvector.com/integration-docs/fetching-bols
+  baseURL: https://api.withvector.com
+  properties:
+  - type: OpenAPI
+    url: openapi/_ae-authored/withvector-com-openapi-generated.yml
+    x-provenance: generated
+  - type: JSONSchema
+    url: json-schema/withvector-com-get10-entities-records-uniqueid-response-schema.json
+  - type: JSONSchema
+    url: json-schema/withvector-com-post10-entities-query-request-schema.json
+  - type: JSONSchema
+    url: json-schema/withvector-com-post10-entities-query-response-schema.json
+  - type: JSONSchema
+    url: json-schema/withvector-com-post10-entities-actions-ingestion-bol-ingest-request-schema.json
+  - type: JSONSchema
+    url: json-schema/withvector-com-post10-entities-records-request-schema.json
+  - type: JSONSchema
+    url: json-schema/withvector-com-post10-entities-actions-ingestion-bol-ingest-response-schema.json
+
+x-backed-by:
+- 8vc
+x-enrichment:
+  date: '2026-10-21'
+  status: enriched
+  artifacts_added: 25
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local,regulatory=local

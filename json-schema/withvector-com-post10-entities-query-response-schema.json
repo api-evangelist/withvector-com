@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/withvector-com/main/json-schema/withvector-com-post10-entities-query-response-schema.json",
+  "title": "Post10EntitiesQueryResponse",
+  "x-generated": "2026-10-21",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/withvector-com-openapi-generated.yml#/components/schemas/Post10EntitiesQueryResponse",
+  "type": "object",
+  "properties": {
+    "children": {
+      "type": "array",
+      "description": "Array where each item contains a data object – a fully hydrated entity in the same shape as the Get Single Document response."
+    },
+    "count": {
+      "type": "integer",
+      "description": "Total number of matched documents."
+    }
+  }
+}

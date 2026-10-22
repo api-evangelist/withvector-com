@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/withvector-com/main/json-schema/withvector-com-get10-entities-records-uniqueid-response-schema.json",
+  "title": "Get10EntitiesRecordsUniqueidResponse",
+  "x-generated": "2026-10-21",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/withvector-com-openapi-generated.yml#/components/schemas/Get10EntitiesRecordsUniqueidResponse",
+  "type": "object",
+  "properties": {
+    "uniqueId": {
+      "type": "string",
+      "description": "UUID of the document in Vector."
+    },
+    "mixins": {
+      "type": "object",
+      "description": "Active and inactive schema mixins (Entity, Document, Bill of Lading, etc.)."
+    },
+    "owner": {
+      "type": "object",
+      "description": "Owner information including user and firm details."
+    },
+    "status.state": {
+      "type": "string",
+      "description": "Processing state: \"idle\" (ready) or \"busy\" (operations cannot be performed)."
+    },
+    "createdBy": {
+      "type": "object",
+      "description": "User who created the document (entityId and displayName)."
+    },
+    "creationDate": {
+      "type": "string",
+      "description": "ISO 8601 timestamp when the document was created."
+    },
+    "modifiedBy": {
+      "type": "object",
+      "description": "User who last modified the document."
+    },
+    "modifiedDate": {
+      "type": "string",
+      "description": "ISO 8601 timestamp when the document was last modified."
+    },
+    "document.name": {
+      "type": "string",
+      "description": "Document name/identifier."
+    },
+    "document.address": {
+      "type": "object",
+      "description": "Resolved address with region, locality, postalCode, streetAddress, geolocation."
+    },
+    "document.processed": {
+      "type": "boolean",
+      "description": "Whether the document has been processed."
+    },
+    "document.uploadDate": {
+      "type": "string",
+      "description": "ISO 8601 timestamp when the document was uploaded."
+    },
+    "document.attachments": {
+      "type": "object",
+      "description": "Files array and aggregate PDF with download URIs."
+    },
+    "core_documents_shipment.*": {
+      "type": "object",
+      "description": "All fields specific to the core_documents_shipment entity (e.g., identification, carrier, weight, etc.) as shown in the example response."
+    }
+  }
+}

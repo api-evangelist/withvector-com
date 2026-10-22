@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/withvector-com/main/json-schema/withvector-com-post10-entities-records-request-schema.json",
+  "title": "Post10EntitiesRecordsRequest",
+  "x-generated": "2026-10-21",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/withvector-com-openapi-generated.yml#/components/schemas/Post10EntitiesRecordsRequest",
+  "type": "object",
+  "properties": {
+    "entity graph": {
+      "type": "string",
+      "description": "Fully built entity graph with platform mixin UUIDs, file IDs, and resolved relationships."
+    }
+  },
+  "required": [
+    "entity graph"
+  ]
+}

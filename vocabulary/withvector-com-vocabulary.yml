@@ -1,0 +1,57 @@
+generated: '2026-10-21'
+method: derived
+generator: derive-vocabulary.py
+source: openapi/_ae-authored/withvector-com-openapi-generated.yml
+vocabulary:
+  name: Vector Domain Vocabulary
+  description: 'Terms declared by Vector''s own API contract: its resource groups, objects and enumerations, with the contract''s definitions.
+    Derived, not authored.'
+  version: '2026-10-21'
+  terms:
+  - term: PostResponse
+    definition: 'Object declared by the contract with fields: message, ingestionConfigId.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/withvector-com-openapi-generated.yml#/components/schemas/PostResponse
+  - term: Post10EntitiesActionsIngestionBolIngestRequest
+    definition: 'Object declared by the contract with fields: metadata, file.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/withvector-com-openapi-generated.yml#/components/schemas/Post10EntitiesActionsIngestionBolIngestRequest
+  - term: Post10EntitiesActionsIngestionBolIngestResponse
+    definition: 'Object declared by the contract with fields: message, ingestionConfigId.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/withvector-com-openapi-generated.yml#/components/schemas/Post10EntitiesActionsIngestionBolIngestResponse
+  - term: Post10EntitiesQueryRequest
+    definition: 'Object declared by the contract with fields: filters, orders, metadata.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/withvector-com-openapi-generated.yml#/components/schemas/Post10EntitiesQueryRequest
+  - term: Post10EntitiesQueryResponse
+    definition: 'Object declared by the contract with fields: children, count.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/withvector-com-openapi-generated.yml#/components/schemas/Post10EntitiesQueryResponse
+  - term: Post10EntitiesRecordsRequest
+    definition: 'Object declared by the contract with fields: entity graph.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/withvector-com-openapi-generated.yml#/components/schemas/Post10EntitiesRecordsRequest
+  - term: Get10EntitiesRecordsUniqueidResponse
+    definition: 'Object declared by the contract with fields: uniqueId, mixins, owner, status.state, createdBy, creationDate, modifiedBy, modifiedDate,
+      document.name, document.address, document.processed, document.uploadDate. (2 more)'
+    tags:
+    - Object
+    source: openapi/_ae-authored/withvector-com-openapi-generated.yml#/components/schemas/Get10EntitiesRecordsUniqueidResponse
+  - term: Api
+    definition: 'Resource group in the contract; its operation POST /: POST /'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/withvector-com-openapi-generated.yml
+  - term: '1'
+    definition: 'Resource group in the contract; its operation POST /1.0/entities/actions/ingestion/bol/ingest: Submit a bill of lading — the
+      document plus its key fields — and Vector files it against the right shipment.'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/withvector-com-openapi-generated.yml
